@@ -2,7 +2,7 @@
 Full-stack resource directory app for foreign residents of Japan
 by Cara Phillips
 
-SEI Final Project, March-April 2022
+SEI Final Project, began March-April 2022  (last update May 2023)
 
 APP URL: https://japanresources.netlify.app
 
@@ -10,15 +10,15 @@ APP URL: https://japanresources.netlify.app
 # Frontend:
  using React, Node
 
- https://github.com/carablythe/JResourcesFrontEnd
+https://github.com/carablythe/LifeInJapanResourceCenter
 
 
 # Backend:
  using django, Python
 
-https://japanresources.herokuapp.com/
+https://lifeinjapanresourcesbackend.onrender.com/
 
-https://github.com/carablythe/JResourcesBackEnd
+https://github.com/carablythe/LifeInJapanResourcesBackEnd
 
 
 #TECHNOLOGIES USED:
