@@ -78,7 +78,7 @@ const Directory = () => {
 
   const getResources = () => {
     axios
-      .get('https://japanresources.herokuapp.com/api/resources')
+      .get('https://lifeinjapanresourcesbackend.onrender.com/api/resources')
       .then(
         (response) => setResources(response.data),
         (err) => console.error(err)
