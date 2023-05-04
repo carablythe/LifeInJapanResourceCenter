@@ -1,0 +1,154 @@
+// The below are variables for fonts, colors and box shadows
+
+$helvetica-font: Helvetica, sans-serif
+$marcellus-font: 'Marcellus', sans-serif
+$very-dark-red: #2e111a
+$dark-pink: #AA104F
+$jade-green: #01A66F
+$dark-green: #198450
+$super-dark-green: #006432
+$pale-green: #ccfdcc
+$div-box-shadow: .5vw .5vw $dark-pink, 1.5vw 1.5vw 1.5vw    $jade-green
+$button-box-shadow: .5vw .5vw $dark-pink
+
+// The below is an example of mixins (with the background image settings)
+
+=sakurabackground
+ background-image: url("https://i.imgur.com/L9JwPub.png")
+ background-size: cover
+
+html
+  +sakurabackground
+
+
+// The below is an example of nesting (with media queries)
+
+html, div, form, button, input, textarea, select, option, .submit
+  font-family: $marcellus-font
+  color: $very-dark-red
+  font-size: 2vw
+  @media (max-width: 800px)
+    font-size: 3vw
+
+.container
+  display: flex
+
+.nav
+  +sakurabackground
+  position: absolute
+  top: 0
+  width: 100%
+  height: 16vw
+  text-align: center
+  filter: invert(.8)
+  margin: 0vw 0vw 0vw 0vw
+  z-index: 500
+  box-shadow: $div-box-shadow
+  @media (max-width: 800px)
+      height: 20vw
+      text-align: left
+
+.navList
+  display: inline
+  margin: 2vw 2.5vw 0vw 1.5vw
+  font-size: 2.5vw
+  @media (max-width: 800px)
+    margin: 2vw 1vw 2vw 0vw
+    padding: 2vw .4vw 2vw 1.5vw
+
+
+.header
+  color: $super-dark-green
+  text-align: center
+  font-size: 4vw
+  margin: 2vw 0vw 2vw 0vw
+  @media (max-width: 800px)
+    font-size: 5vw
+
+
+// The below is an import of the popup css (separate SASS file)
+
+@import "./popup"
+
+
+aside
+  margin: 16vw 4vw 3vw 0vw
+  @media (max-width: 800px)
+      margin: 19vw 4vw 3vw 0vw
+
+
+.directoryMenu
+  +sakurabackground
+  position: relative
+  width: 40%
+  padding: 1vw 1vw 1vw 1vw
+  filter: invert(.8)
+  z-index: 1
+  box-shadow: $div-box-shadow
+  @media (max-width: 800px)
+      width: 40%
+
+.directoryTitle
+  margin: 2.7vw 0vw 1vw 1vw
+  @media (max-width: 800px)
+      margin: 4vw 0vw 1vw 1vw
+
+.resourceCategory
+  margin-left: -1.5vw
+  @media (max-width: 800px)
+    margin-left: -2.9vw
+
+.resourceSubcategory
+  margin-left: -.6vw
+  @media (max-width: 800px)
+    margin-left: -1.5vw
+
+.resourceLI
+  margin-left: -2vw
+  @media (max-width: 800px)
+    margin-left: -3.5vw
+
+
+.contact, .forum, .home, .login
+  width: 115%
+  padding: 2vw 2vw 2vw 2vw
+  @media (max-width: 800px)
+      width: 60%
+
+textarea, input, select
+  width: 55vw
+  @media (max-width: 800px)
+    width: 45vw
+
+textarea
+  height: 15vw
+
+
+summary, li
+  list-style-type: none
+  padding: .5vw .5vw
+  @media (max-width: 800px)
+    list-style-type: none
+
+a, summary:hover
+    text-decoration: none
+    color: $jade-green
+
+a:hover, .search, .clickHere:hover, .directoryTitle, .welcome, .forumTitle, .contactTitle , .authTitle
+    color: $dark-pink
+
+
+button, .submit
+  background: $pale-green
+  box-shadow: $button-box-shadow
+  &:hover
+   filter: invert(1)
+
+.clickHere, .searchResults
+  color: $dark-green
+  font-size: 2.3vw
+
+
+@media (max-width: 800px)
+   .navList, .clickHere, .searchResults, .directoryTitle, .welcome, .forumTitle, .contactTitle, .authTitle, .search
+    font-size: 3vw

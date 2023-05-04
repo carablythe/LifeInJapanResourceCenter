@@ -1,0 +1,219 @@
+html {
+  background-image: url("https://i.imgur.com/L9JwPub.png");
+  background-size: cover;
+}
+
+html, div, form, button, input, textarea, select, option, .submit {
+  font-family: "Marcellus", sans-serif;
+  color: #2e111a;
+  font-size: 2vw;
+}
+@media (max-width: 800px) {
+  html, div, form, button, input, textarea, select, option, .submit {
+    font-size: 3vw;
+  }
+}
+
+.container {
+  display: flex;
+}
+
+.nav {
+  background-image: url("https://i.imgur.com/L9JwPub.png");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 16vw;
+  text-align: center;
+  filter: invert(0.8);
+  margin: 0vw 0vw 0vw 0vw;
+  z-index: 500;
+  box-shadow: 0.5vw 0.5vw #AA104F, 1.5vw 1.5vw 1.5vw #01A66F;
+}
+@media (max-width: 800px) {
+  .nav {
+    height: 20vw;
+    text-align: left;
+  }
+}
+
+.navList {
+  display: inline;
+  margin: 2vw 2.5vw 0vw 1.5vw;
+  font-size: 2.5vw;
+}
+@media (max-width: 800px) {
+  .navList {
+    margin: 2vw 1vw 2vw 0vw;
+    padding: 2vw 0.4vw 2vw 1.5vw;
+  }
+}
+
+.header {
+  color: #006432;
+  text-align: center;
+  font-size: 4vw;
+  margin: 2vw 0vw 2vw 0vw;
+}
+@media (max-width: 800px) {
+  .header {
+    font-size: 5vw;
+  }
+}
+
+.Popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.Popup-inner {
+  background-image: url("https://i.imgur.com/L9JwPub.png");
+  background-size: cover;
+  position: fixed;
+  padding: 3vw 5vw 4vw 5vw;
+  width: 100%;
+  max-width: 70vw;
+  box-shadow: 0.5vw 0.5vw #AA104F, 1.5vw 1.5vw 1.5vw #01A66F;
+}
+
+.close-btn {
+  position: absolute;
+  bottom: 3vw;
+  right: 3vw;
+  box-shadow: 0.5vw 0.5vw #AA104F;
+}
+
+aside {
+  margin: 16vw 4vw 3vw 0vw;
+}
+@media (max-width: 800px) {
+  aside {
+    margin: 19vw 4vw 3vw 0vw;
+  }
+}
+
+.directoryMenu {
+  background-image: url("https://i.imgur.com/L9JwPub.png");
+  background-size: cover;
+  position: relative;
+  width: 40%;
+  padding: 1vw 1vw 1vw 1vw;
+  filter: invert(0.8);
+  z-index: 1;
+  box-shadow: 0.5vw 0.5vw #AA104F, 1.5vw 1.5vw 1.5vw #01A66F;
+}
+@media (max-width: 800px) {
+  .directoryMenu {
+    width: 40%;
+  }
+}
+
+.directoryTitle {
+  margin: 2.7vw 0vw 1vw 1vw;
+}
+@media (max-width: 800px) {
+  .directoryTitle {
+    margin: 4vw 0vw 1vw 1vw;
+  }
+}
+
+.resourceCategory {
+  margin-left: -1.5vw;
+}
+@media (max-width: 800px) {
+  .resourceCategory {
+    margin-left: -2.9vw;
+  }
+}
+
+.resourceSubcategory {
+  margin-left: -0.6vw;
+}
+@media (max-width: 800px) {
+  .resourceSubcategory {
+    margin-left: -1.5vw;
+  }
+}
+
+.resourceLI {
+  margin-left: -2vw;
+}
+@media (max-width: 800px) {
+  .resourceLI {
+    margin-left: -3.5vw;
+  }
+}
+
+.contact, .forum, .home, .login {
+  width: 115%;
+  padding: 2vw 2vw 2vw 2vw;
+}
+@media (max-width: 800px) {
+  .contact, .forum, .home, .login {
+    width: 60%;
+  }
+}
+
+textarea, input, select {
+  width: 55vw;
+}
+@media (max-width: 800px) {
+  textarea, input, select {
+    width: 45vw;
+  }
+}
+
+textarea {
+  height: 15vw;
+}
+
+summary, li {
+  list-style-type: none;
+  padding: 0.5vw 0.5vw;
+}
+@media (max-width: 800px) {
+  summary, li {
+    list-style-type: none;
+  }
+}
+
+a, summary:hover {
+  text-decoration: none;
+  color: #01A66F;
+}
+
+a:hover, .search, .clickHere:hover, .directoryTitle, .welcome, .forumTitle, .contactTitle, .authTitle {
+  color: #AA104F;
+}
+
+button, .submit {
+  background: #ccfdcc;
+  box-shadow: 0.5vw 0.5vw #AA104F;
+}
+button:hover, .submit:hover {
+  filter: invert(1);
+}
+
+.clickHere, .searchResults {
+  color: #198450;
+  font-size: 2.3vw;
+}
+
+@media (max-width: 800px) {
+  .navList, .clickHere, .searchResults, .directoryTitle, .welcome, .forumTitle, .contactTitle, .authTitle, .search {
+    font-size: 3vw;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

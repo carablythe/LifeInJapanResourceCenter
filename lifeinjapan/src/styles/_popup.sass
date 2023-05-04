@@ -1,0 +1,27 @@
+.Popup
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 999
+  background-color: rgba(0,0,0,0.7)
+  background-size: cover
+  background-repeat: repeat
+
+.Popup-inner
+  +sakurabackground
+  position: fixed
+  padding: 3vw 5vw 4vw 5vw
+  width: 100%
+  max-width: 70vw
+  box-shadow: $div-box-shadow
+
+.close-btn
+  position: absolute
+  bottom: 3vw
+  right: 3vw
+  box-shadow: $button-box-shadow
