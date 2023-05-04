@@ -4,7 +4,7 @@ by Cara Phillips
 
 SEI Final Project, began March-April 2022  (last update May 2023)
 
-APP URL: https://japanresources.netlify.app
+APP URL: https://lifeinjapan.netlify.app/
 
 
 # Frontend:
