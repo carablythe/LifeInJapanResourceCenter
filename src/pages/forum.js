@@ -29,23 +29,23 @@ const Forum = () => {
         console.log(response)
         getQuestions()
       })
-    }
+  }
 
 
   const handleUpdateQuestion = (editQuestion) => {
     console.log(editQuestion)
     axios
-      .put('https://lifeinjapanresourcesbackend.onrender.com/api/forum' + editQuestion.id, editQuestion)
-      .then((response) => {
+      .put('https://lifeinjapanresourcesbackend.onrender.com/api/forum/' + editQuestion.id, editQuestion)
+      .then(() => {
         getQuestions()
       })
-    }
+  }
 
 
   const handleDeleteQuestion = (event) => {
         axios
-          .delete('https://lifeinjapanresourcesbackend.onrender.com/api/forum' + event.target.value)
-            .then((response) => {
+          .delete('https://lifeinjapanresourcesbackend.onrender.com/api/forum/' + event.target.value)
+            .then(() => {
               getQuestions()
                 })
             }
@@ -59,18 +59,20 @@ const Forum = () => {
     <>
      <aside className = "forum">
       <div className="questions">
-        <h3 className ="forumTitle">Questions? Comments? Please post them here:</h3>
+        <h3 className ="forumTitle">Questions? Comments? Please post them here (<i>login required</i>):</h3>
         {questions.map((question) => {
           return (
             <div className="question" key={question.id}>
-            <h4>Name: </h4>
+            <h4>Username: </h4>
             <p className= "posting"> {question.name}</p>
-            <h4>Question/Comment:</h4>
+            <h4>Post:</h4>
             <p className= "posting">{question.question}</p>
-            <EditQuestion handleUpdateQuestion={handleUpdateQuestion} id={question.id} />
-            <br />
+            {isAuthenticated && (
+               <EditQuestion handleUpdateQuestion={handleUpdateQuestion} id={question.id} />
+            )}
+              <br />
              {isAuthenticated && (
-            <button onClick={handleDeleteQuestion} value={question.id}> Delete Your Question</button>
+            <button onClick={handleDeleteQuestion} value={question.id}> Delete Your Question/</button>
             )}
             <br />
             ----------------------------
@@ -78,7 +80,9 @@ const Forum = () => {
              )
          })}
       </div>
+      {isAuthenticated && (
       <AddQuestion handleCreate={handleCreateQuestion} />
+      )}
       </aside>
         <br />
     </>

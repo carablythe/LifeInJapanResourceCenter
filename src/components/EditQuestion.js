@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { useAuth0 } from "@auth0/auth0-react"
 
 const EditQuestion = (props) => {
   let emptyQuestion = {id: props.id, name: '', question: '' }
   const [question, setQuestion] = useState(emptyQuestion)
-  const {isAuthenticated } = useAuth0()
 
   const handleChange = (event) => {
     setQuestion({ ...question, [event.target.name]: event.target.value })
@@ -17,7 +15,6 @@ const EditQuestion = (props) => {
 
 
   return (
-      isAuthenticated && (
     <>
       <details>
         <summary class = "clickHere"><b>Click Here to Edit Your Question</b></summary>
@@ -41,8 +38,7 @@ const EditQuestion = (props) => {
         </form>
       </details>
     </>
-    ): null
-  )
+    )
 }
 
 export default EditQuestion

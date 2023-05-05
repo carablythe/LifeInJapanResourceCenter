@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router';
+import { useAuth0 } from "@auth0/auth0-react"
 import AddResource from '../components/AddResource'
+import EditResource from '../components/EditResource'
 // import EditResource from '../components/EditResource'
 
 
-const Home = (props) => {
+const Home = () => {
   const [resources, setResources] = useState([]); useParams()
   const [query, setQuery] = useState([])
+  const {isAuthenticated } = useAuth0()
 
 
 // adapted below searchbar filter from https://www.youtube.com/watch?v=x7niho285qs
@@ -65,24 +68,23 @@ const Home = (props) => {
        })
     }
 
-  //
-  // const handleUpdateResource = (editResource) => {
-  //   console.log(editResource)
-  //   axios
-  //     .put('https://lifeinjapanresourcesbackend.onrender.com/api/resources' + editResource.id, editResource)
-  //     .then((response) => {
-  //       getResources()
-  //     })
-  //   }
-  //
-  //
-  // const handleDeleteResource = (event) => {
-  //   axios
-  //     .delete('https://lifeinjapanresourcesbackend.onrender.com/api/resources' + event.target.value)
-  //     .then((response) => {
-  //       getResources()
-  //     })
-  //   }
+  const handleUpdateResource = (editResource) => {
+      console.log(editResource)
+      axios
+        .put('https://lifeinjapanresourcesbackend.onrender.com/api/resources/' + editResource.id, editResource)
+          .then(() => {
+            getResources()
+           })
+      }
+  
+  
+  const handleDeleteResource = (event) => {
+          axios
+            .delete('https://lifeinjapanresourcesbackend.onrender.com/api/resources/' + event.target.value)
+              .then(() => {
+                getResources()
+                  })
+          }
 
 
   useEffect(() => {
@@ -96,6 +98,8 @@ const Home = (props) => {
           <h3 className = "welcome"> Welcome! </h3>
           <h4>As a long-term resident of Japan, I would like to share what I have learned through my ups and downs of living in this beautiful country!  </h4>
           <h4>I hope the resources you find on this site are informative and allow for smoother transitions and an easier time navigating through life here.</h4>
+          <h4>Also, feel free to add new resources to this site. <i>(login required)</i></h4>
+          <h4>Thank you!</h4>
           <h4>-Cara</h4>
         </div>
         <div className="search"><b>Search Topic:</b>
@@ -118,6 +122,15 @@ const Home = (props) => {
             <em>Visit this Link/URL</em></a>
             </p>
             <p>Description: {resource.description}</p>
+            <br />
+            {isAuthenticated && (
+               <EditResource handleUpdateResource={handleUpdateResource} id={resource.id} />
+            )}
+              <br />
+             {isAuthenticated && (
+            <button onClick={handleDeleteResource} value={resource.id}> Delete Your Resource/</button>
+            )}
+             <br />
             ----------------------------
             </div>
            )
@@ -125,7 +138,9 @@ const Home = (props) => {
         </div>
       )}
         <br/>
-        <AddResource handleCreateResource = {handleCreateResource}/>
+        {isAuthenticated && (
+        <AddResource handleCreate = {handleCreateResource}/>
+        )}
         <br/>
       </aside>
     </>

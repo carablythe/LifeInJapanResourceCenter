@@ -166,7 +166,7 @@ aside {
 }
 
 textarea, input, select {
-  width: 55vw;
+  width: 58vw;
 }
 @media (max-width: 800px) {
   textarea, input, select {

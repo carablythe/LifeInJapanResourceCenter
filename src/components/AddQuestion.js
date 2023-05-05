@@ -12,11 +12,14 @@ const AddQuestion = (props) => {
     event.preventDefault()
     props.handleCreate(question)
   }
+
+
   return (
     <>
       <details>
       <summary class = "clickHere"><b>Click Here to Ask a Question or Add a Comment</b></summary>
          <br />
+      <div class ="form-hide">
       <form onSubmit={handleSubmit}>
         <input type="text" name="name"
         placeholder= "Your Name"
@@ -28,9 +31,11 @@ const AddQuestion = (props) => {
           <br />
         <input className = "submit" type="submit"/>
       </form>
+      </div>
       </details>
     </>
   )
 }
+
 
 export default AddQuestion

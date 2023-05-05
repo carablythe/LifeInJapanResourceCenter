@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 
 const EditResource = (props) => {
   let emptyResource = {id: props.id, topic: '', category: '', subcategory: '', URL: '', description: ''}
   const [resource, setResource] = useState(emptyResource)
-
 
   const handleChange = (event) => {
     setResource({ ...resource, [event.target.name]: event.target.value })
@@ -12,7 +10,7 @@ const EditResource = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.handleUpdate(resource)
+    props.handleUpdateResource(resource)
   }
 
 
@@ -26,17 +24,18 @@ const EditResource = (props) => {
           <input type="text" name="topic" value={resource.topic} onChange={handleChange} />
           <br />
           <label htmlFor="category">Category:</label>
-          <input type="text" name="category" value={resource.category} onChange={handleChange} />
-          <br />
+          <input type = "text" name="category" value={resource.category} onChange={handleChange} />
+          <br/>
           <label htmlFor="subcategory">Subcategory:</label>
-          <input type="text" name="subcategory" value={resource.subcategory} onChange={handleChange} />
-          <br />
-          <label htmlFor="url">Link/URL:</label>
-          <input type="text" name="url" value={resource.URL} onChange={handleChange} />
+          <input type = "text" name="subcategory" value={resource.subcategory} onChange={handleChange} />
+          <br/>
+          <label htmlFor="URL">Link/URL:</label>
+          <input type="text" name="URL" value={resource.URL} onChange={handleChange} />
           <br />
           <label htmlFor="description">Description:</label>
-          <input type="text" name="description" value={resource.description} onChange={handleChange} />
-          <input className = "submit" type="submit" />
+          <textarea name="description" value={resource.description} onChange={handleChange} >  </textarea>
+            <br />
+          <input className = "submit" type="submit"/>
         </form>
       </details>
     </>

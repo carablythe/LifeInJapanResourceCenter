@@ -1167,7 +1167,7 @@ const Directory = () => {
                                     <details>
                                      <summary className="resourceSubcategory">Other</ summary>
                                       {resources.filter((resource, index) => {
-                                        if (resource.category === "Other" &&
+                                        if (resource.category === "Other Category" &&
                                         resource.subcategory === "Other")
                                           {return resource}
                                         else {return null}
